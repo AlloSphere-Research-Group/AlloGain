@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="gZSKVN" name="AlloSphere Gain Control" projectType="guiapp"
+              version="1.0.0" bundleIdentifier="com.JosephtTilbian.AlloSphereGainControl"
+              includeBinaryInAppConfig="1" jucerVersion="3.2.0" companyName="Joseph Tilbian"
+              companyWebsite="jtilbian.com" companyEmail="contact@jtilbian.com">
+  <MAINGROUP id="SLxCt8" name="AlloSphere Gain Control">
+    <GROUP id="{49FDECBE-441B-7518-E17B-14B81A36E8A9}" name="Resources">
+      <FILE id="jh1yN5" name="AlloGain.png" compile="0" resource="1" file="Resources/AlloGain.png"/>
+    </GROUP>
+    <GROUP id="{787C98A7-BBDA-A652-788F-9527F0A78F52}" name="ECHO Header">
+      <FILE id="KI8hrq" name="base.h" compile="0" resource="0" file="ECHO/base.h"/>
+      <FILE id="TQNDb1" name="CaDevList.h" compile="0" resource="0" file="ECHO/CaDevList.h"/>
+      <FILE id="yMD8K2" name="CfHelpers.h" compile="0" resource="0" file="ECHO/CfHelpers.h"/>
+      <FILE id="ruxAj0" name="CoreEFC.h" compile="0" resource="0" file="ECHO/CoreEFC.h"/>
+      <FILE id="qRDLby" name="ehw.h" compile="0" resource="0" file="ECHO/ehw.h"/>
+      <FILE id="pqUlcg" name="ehwlist.h" compile="0" resource="0" file="ECHO/ehwlist.h"/>
+      <FILE id="KlXIzj" name="EndianSwap.h" compile="0" resource="0" file="ECHO/EndianSwap.h"/>
+      <FILE id="Hs3RIW" name="hwcaps.h" compile="0" resource="0" file="ECHO/hwcaps.h"/>
+      <FILE id="ZlHIUZ" name="ScopedCFObject.h" compile="0" resource="0"
+            file="ECHO/ScopedCFObject.h"/>
+      <FILE id="wawgvl" name="ScopedIOObject.h" compile="0" resource="0"
+            file="ECHO/ScopedIOObject.h"/>
+    </GROUP>
+    <GROUP id="{1F12B849-CC1A-A914-438B-C52F059BBF19}" name="ECHO Source">
+      <FILE id="lmxTZx" name="CaDevList.cpp" compile="1" resource="0" file="ECHO/CaDevList.cpp"/>
+      <FILE id="aZGz5v" name="ehw.cpp" compile="1" resource="0" file="ECHO/ehw.cpp"/>
+      <FILE id="Gx2MUc" name="EhwList.cpp" compile="1" resource="0" file="ECHO/EhwList.cpp"/>
+      <FILE id="HZn2ns" name="EndianSwap.cpp" compile="1" resource="0" file="ECHO/EndianSwap.cpp"/>
+      <FILE id="b0rGkl" name="hwcaps.cpp" compile="1" resource="0" file="ECHO/hwcaps.cpp"/>
+    </GROUP>
+    <GROUP id="{02CC1E79-990C-3D76-3A7F-AB8348862698}" name="Source">
+      <FILE id="mo4DDG" name="Config.h" compile="0" resource="0" file="Source/Config.h"/>
+      <FILE id="MKDKSf" name="MainComponentHelper.h" compile="0" resource="0"
+            file="Source/MainComponentHelper.h"/>
+      <FILE id="J8zM4c" name="Help.cpp" compile="1" resource="0" file="Source/Help.cpp"/>
+      <FILE id="B6paou" name="Help.h" compile="0" resource="0" file="Source/Help.h"/>
+      <FILE id="nybb6F" name="Info.cpp" compile="1" resource="0" file="Source/Info.cpp"/>
+      <FILE id="vGbW41" name="Info.h" compile="0" resource="0" file="Source/Info.h"/>
+      <FILE id="KvYVzf" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="ohk2aP" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="sA0Pc8" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX" smallIcon="jh1yN5" bigIcon="jh1yN5">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="AlloGain"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="3" targetName="AlloGain"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
