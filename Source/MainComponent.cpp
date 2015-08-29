@@ -167,7 +167,6 @@ MainContentComponent::MainContentComponent ()
         int32 clockRate;
         deviceList[deviceNumber]->getclock(clockRate,clockSource);
 
-
         if ( clockSource == 0)
         {
             sampleRate = clockRate;
@@ -180,7 +179,7 @@ MainContentComponent::MainContentComponent ()
     {
         getLookAndFeel().setUsingNativeAlertWindows (true);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
-                                          "No Clock Source!",
+                                          "Clock Source Not Found!",
                                           "A clock source was not found. Set a clock master device and restart the application.",
                                           "OK");
         disableComponents();
@@ -188,10 +187,9 @@ MainContentComponent::MainContentComponent ()
 
     if (masterClockCount > 1)
     {
-
         getLookAndFeel().setUsingNativeAlertWindows (true);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
-                                          "Too Many Clock Source!",
+                                          "Too Many Clock Sources!",
                                           "There are multiple clock master devices on the system. Only one is allowed.",
                                           "OK");
         disableComponents();
@@ -224,7 +222,7 @@ MainContentComponent::~MainContentComponent()
 {
     //[Destructor_pre]. You can add your own custom destruction code here..
     infoWindow = nullptr;
-    //helpWindow = nullptr;
+    helpWindow = nullptr;
     //[/Destructor_pre]
 
     tb_Plus025 = nullptr;
@@ -245,7 +243,6 @@ MainContentComponent::~MainContentComponent()
     //[Destructor]. You can add your own custom destruction code here..
     for(int32 deviceNumber = 0; deviceNumber < deviceCount; deviceNumber++)
     {
-        
         int32 outputChannelCount = deviceList[deviceNumber]->getoutputchannelcount();
         
         for(int32 channelNumber = 0; channelNumber < outputChannelCount; channelNumber++)
@@ -470,7 +467,6 @@ void MainContentComponent::changeGain(float gain)
 
 void MainContentComponent::disableComponents()
 {
-    ;
     for (int i = 0; i < this->getNumChildComponents(); i++)
     {
         if (Component * component = this->getChildComponent(i))
@@ -491,7 +487,7 @@ void MainContentComponent::handleMessage (const Message &message)
         getLookAndFeel().setUsingNativeAlertWindows (true);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
                                           "Audio Interface Added!",
-                                          "An interface was just added to the system. If audio was playing while this event occured, please stop the source first. Then proceed to closing and restarting this application.",
+                                          "An audio interface was just added to the system. If audio was playing while this event occured, please stop the source first and then close and restart this application.",
                                           "OK");
         
         deviceList.clear();
@@ -514,7 +510,7 @@ void MainContentComponent::handleMessage (const Message &message)
         getLookAndFeel().setUsingNativeAlertWindows (true);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
                                           "Audio Interface Removed!",
-                                          "An interface was just removed from the system. If audio was playing while this event occured, please stop the source first. Then proceed to closing and restarting this application.",
+                                          "An audio interface was just removed from the system. If audio was playing while this event occured, please stop the source first and then close and restart this application.",
                                           "OK");
         
         deviceList.clear();
