@@ -1,7 +1,5 @@
 # AlloGain
-AlloGain is a standalone application to control the gain level of the AlloSphere's audio system.
-The application is compatible with the ECHO AudioFire 12 interfaces.
-Gain level adjustments are performed digitally on the DSP at 24-bit.
+AlloGain is a standalone application designed to control the gain level of the AlloSphere's audio system. The application is compatible with the ECHO AudioFire 12 interfaces. Gain level adjustments are performed digitally on the DSP at 24-bit resolution.
 
 ### Features
 * Displays the set gain level
@@ -15,15 +13,13 @@ Gain level adjustments are performed digitally on the DSP at 24-bit.
 * Detects addition and removal of interfaces
  
 ### Keyboard Shortcuts
-
 | Key Combination |  Function |
 |:---|:---|
 | control + shift + = | Increases the gain by 1.00 dB  |
-| control + shift + -  | Decreases the gain by 1.00 dB  |
+| control + shift + - | Decreases the gain by 1.00 dB  |
 
 ### Compatible OS
-
 * Apple - OS X
 
 ### Dependency
-* [JUCE for MAC](http:\\http://www.juce.com/)
+* [JUCE for MAC](http://www.juce.com/)
