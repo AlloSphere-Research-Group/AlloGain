@@ -23,3 +23,13 @@ AlloGain is a standalone application designed to control the gain level of the A
 
 ### Dependency
 * [JUCE for MAC](http://www.juce.com/)
+
+### Build Instruction
+* Download JUCE and unzip.
+* Start Introjucer and select "Open Existing Porject"
+* Open AlloGain.jucer
+* Go to the "Config" tab
+* Configure the path of the JUCE modules (Should point to where JUCE was unzipped)
+* Configure the Debug and Release builds to the correct SDK
+* Press "Save Project and Open in Xcode..."
+* Build the project in Xcode
