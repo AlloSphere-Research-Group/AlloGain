@@ -160,7 +160,7 @@ MainContentComponent::MainContentComponent ()
 
         for(int32 channelNumber = 0; channelNumber < outputChannelCount; channelNumber++)
         {
-            deviceList[deviceNumber]->setmastermute(channelNumber, MuteState::MUTE);
+            deviceList[deviceNumber]->setmastermute(channelNumber, 1);
         }
 
         int32 clockSource;
@@ -252,7 +252,7 @@ MainContentComponent::~MainContentComponent()
 
         for(int32 channelNumber = 0; channelNumber < outputChannelCount; channelNumber++)
         {
-            deviceList[deviceNumber]->setmastermute(channelNumber, MuteState::MUTE);
+            deviceList[deviceNumber]->setmastermute(channelNumber, 1);
         }
     }
 
@@ -365,7 +365,7 @@ void MainContentComponent::buttonClicked (Button* buttonThatWasClicked)
 
                 for(int channelNumber = 0; channelNumber < outputChannelCount; channelNumber++)
                 {
-                    deviceList[deviceNumber]->setmastermute(channelNumber, MuteState::UNMUTE);
+                    deviceList[deviceNumber]->setmastermute(channelNumber, 0);
                 }
             }
 
@@ -383,7 +383,7 @@ void MainContentComponent::buttonClicked (Button* buttonThatWasClicked)
 
                 for(int32 channelNumber = 0; channelNumber < outputChannelCount; channelNumber++)
                 {
-                    deviceList[deviceNumber]->setmastermute(channelNumber, MuteState::MUTE);
+                    deviceList[deviceNumber]->setmastermute(channelNumber, 1);
                 }
             }
 
@@ -438,22 +438,28 @@ bool MainContentComponent::keyPressed (const KeyPress& key)
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 void MainContentComponent::changeGain(float gain)
 {
+    Label::ColourIds colourId = Label::backgroundColourId;
+    
     currentGain += gain;
+    
     if (currentGain < minimumGain) currentGain = minimumGain;
     if (currentGain > maximumGain) currentGain = maximumGain;
+    
     lb_Gain->setText(String::formatted("%2.2f",currentGain) + " dB", dontSendNotification);
+    
     if (currentGain < lowGainUpperLevel)
     {
-        lb_Gain->setColour(Label::ColourIds::backgroundColourId, Colours::green);
+        lb_Gain->setColour(colourId, Colours::green);
     }
     else if (currentGain >= lowGainUpperLevel && currentGain < midGainUpperLevel)
     {
-        lb_Gain->setColour(Label::ColourIds::backgroundColourId, Colours::yellow);
+        lb_Gain->setColour(colourId, Colours::yellow);
     }
     else
     {
-        lb_Gain->setColour(Label::ColourIds::backgroundColourId, Colours::red);
+        lb_Gain->setColour(colourId, Colours::red);
     }
+    
     for(int32 deviceNumber = 0; deviceNumber < deviceCount; deviceNumber++)
     {
         int32 outputChannelCount = deviceList[deviceNumber]->getoutputchannelcount();

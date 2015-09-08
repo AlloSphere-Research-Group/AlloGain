@@ -18,11 +18,6 @@
 #ifndef MAINCOMPONENTHELPER_H_INCLUDED
 #define MAINCOMPONENTHELPER_H_INCLUDED
 
-enum MuteState{
-    UNMUTE = 0,
-    MUTE
-};
-
 // Look And Feel for Mute Button
 struct MuteLookAndFeel    : public LookAndFeel_V3
 {
