@@ -67,8 +67,10 @@ private:
     float lowGainUpperLevel;
     float midGainUpperLevel;
     float currentGain;
-    bool muteState;
     float sampleRate;
+    
+    bool muteState;
+    bool deviceCountChange;
     
     void changeGain(float gain);
     void disableComponents();

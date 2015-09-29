@@ -138,7 +138,7 @@ MainContentComponent::MainContentComponent ()
 #ifdef NDEBUG
     if (deviceCount == 0)
     {
-        getLookAndFeel().setUsingNativeAlertWindows (true);
+        getLookAndFeel().setUsingNativeAlertWindows (TRUE);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
                                           "Audio Interface Not Found!",
                                           "Add an audio interface to the system and restart the application.",
@@ -177,7 +177,7 @@ MainContentComponent::MainContentComponent ()
 #ifdef NDEBUG
     if (masterClockCount == 0)
     {
-        getLookAndFeel().setUsingNativeAlertWindows (true);
+        getLookAndFeel().setUsingNativeAlertWindows (TRUE);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
                                           "Clock Source Not Found!",
                                           "A clock source was not found. Set a clock master device and restart the application.",
@@ -187,7 +187,7 @@ MainContentComponent::MainContentComponent ()
 
     if (masterClockCount > 1)
     {
-        getLookAndFeel().setUsingNativeAlertWindows (true);
+        getLookAndFeel().setUsingNativeAlertWindows (TRUE);
         AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
                                           "Too Many Clock Sources!",
                                           "There are multiple clock master devices on the system. Only one is allowed.",
@@ -207,6 +207,8 @@ MainContentComponent::MainContentComponent ()
     lb_Info->setText(info, dontSendNotification);
 
     muteState = TRUE;
+    deviceCountChange = FALSE;
+    
     tb_Mute->setButtonText("UNMUTE");
     tb_Mute->setColour(TextButton::buttonColourId, Colours::greenyellow);
     tb_Mute->setColour (TextButton::buttonOnColourId, Colours::green);
@@ -429,7 +431,7 @@ bool MainContentComponent::keyPressed (const KeyPress& key)
     {
         changeGain(+1.00);
     }
-    return false;  // Return true if your handler uses this key event, or false to allow it to be passed-on.
+    return FALSE;  // Return true if your handler uses this key event, or false to allow it to be passed-on.
     //[/UserCode_keyPressed]
 }
 
@@ -477,7 +479,7 @@ void MainContentComponent::disableComponents()
     {
         if (Component * component = this->getChildComponent(i))
         {
-            component->setEnabled(false);
+            component->setEnabled(FALSE);
         }
     }
 }
@@ -490,11 +492,14 @@ void MainContentComponent::handleMessage (const Message &message)
     {
         DBG("Device Added!");
         
-        getLookAndFeel().setUsingNativeAlertWindows (true);
-        AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
-                                          "Audio Interface Added!",
-                                          "An audio interface was just added to the system. If audio was playing while this event occured, please stop the source first and then close and restart this application.",
-                                          "OK");
+        if (not deviceCountChange) {
+            getLookAndFeel().setUsingNativeAlertWindows (TRUE);
+            AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
+                                              "Audio Interface Added!",
+                                              "An audio interface was just added to the system. If audio was playing while this event occured, please stop the source first and then close and restart this application.",
+                                              "OK");
+            deviceCountChange = TRUE;
+        }
         
         deviceList.clear();
         deviceCount = devices->GetNumDevices();
@@ -513,11 +518,14 @@ void MainContentComponent::handleMessage (const Message &message)
     {
         DBG("Device Removed!");
         
-        getLookAndFeel().setUsingNativeAlertWindows (true);
-        AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
-                                          "Audio Interface Removed!",
-                                          "An audio interface was just removed from the system. If audio was playing while this event occured, please stop the source first and then close and restart this application.",
-                                          "OK");
+        if (not deviceCountChange) {
+            getLookAndFeel().setUsingNativeAlertWindows (TRUE);
+            AlertWindow::showMessageBoxAsync (AlertWindow::WarningIcon,
+                                              "Audio Interface Removed!",
+                                              "An audio interface was just removed from the system. If audio was playing while this event occured, please stop the source first and then close and restart this application.",
+                                              "OK");
+            deviceCountChange = TRUE;
+        }
         
         deviceList.clear();
         deviceCount = devices->GetNumDevices();
