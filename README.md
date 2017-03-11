@@ -11,7 +11,7 @@ AlloGain is a standalone application designed to control the gain level of the A
 * Lists connected interfaces
 * Checks bus master clock
 * Detects addition and removal of interfaces
- 
+
 ### Keyboard Shortcuts
 | Key Combination |  Function |
 |:---|:---|
@@ -26,7 +26,7 @@ AlloGain is a standalone application designed to control the gain level of the A
 
 ### Build Instruction
 * Download JUCE and unzip.
-* Start Introjucer and select "Open Existing Porject"
+* Start Projucer and select "Open Existing Project"
 * Open AlloGain.jucer
 * Go to the "Config" tab
 * Configure the path of the JUCE modules (Should point to where JUCE was unzipped)
