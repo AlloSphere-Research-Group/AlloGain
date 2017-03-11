@@ -13,6 +13,7 @@
 
 #include <IOKit/IOKitLib.h>
 #include <CoreAudio/AudioHardware.h>
+#include "juceHeader.h"
 
 enum 
 {

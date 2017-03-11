@@ -1,4 +1,4 @@
-#include "base.h"
+#include "EndianSwap.h"
 
 #if defined(JUCE_MAC) && defined(JUCE_LITTLE_ENDIAN)
 void swapcopy32(uint32 *dest,uint32 *src,int bytes)

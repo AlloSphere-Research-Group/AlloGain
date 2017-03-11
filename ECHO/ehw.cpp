@@ -6,16 +6,17 @@
  *
  ********************************************************************************/
 
-#include "base.h"
-#include "ehw.h"
-#include "hwcaps.h"
-#include "CaDevList.h"
-#include "EndianSwap.h"
+
 #include <IOKit/IOKitLib.h>
 #include <IOKit/avc/IOFireWireAVCConsts.h>
 #include <IOKit/firewire/IOFireWireLib.h>
 #include <IOKit/firewire/IOFireWireFamilyCommon.h>
 #include <CoreAudio/AudioHardware.h>
+#include "base.h"
+#include "ehw.h"
+#include "hwcaps.h"
+#include "CaDevList.h"
+#include "EndianSwap.h"
 //#include "firewire_osx.h"
 
 

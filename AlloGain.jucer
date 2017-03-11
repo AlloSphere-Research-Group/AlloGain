@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="gZSKVN" name="AlloSphere Gain Control" projectType="guiapp"
               version="1.0.0" bundleIdentifier="com.JosephtTilbian.AlloSphereGainControl"
-              includeBinaryInAppConfig="1" jucerVersion="3.2.0" companyName="Joseph Tilbian"
+              includeBinaryInAppConfig="1" jucerVersion="4.3.1" companyName="Joseph Tilbian"
               companyWebsite="jtilbian.com" companyEmail="contact@jtilbian.com">
   <MAINGROUP id="SLxCt8" name="AlloSphere Gain Control">
     <GROUP id="{49FDECBE-441B-7518-E17B-14B81A36E8A9}" name="Resources">
@@ -46,27 +46,27 @@
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX" smallIcon="jh1yN5" bigIcon="jh1yN5">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
-                       isDebug="1" optimisation="1" targetName="AlloGain"/>
-        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
-                       isDebug="0" optimisation="3" targetName="AlloGain"/>
+        <CONFIGURATION name="Debug" osxSDK="10.12 SDK" osxCompatibility="10.12 SDK"
+                       osxArchitecture="default" isDebug="1" optimisation="1" targetName="AlloGain"/>
+        <CONFIGURATION name="Release" osxSDK="10.12 SDK" osxCompatibility="10.12 SDK"
+                       osxArchitecture="default" isDebug="0" optimisation="3" targetName="AlloGain"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE 4.3.1/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE 4.3.1/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
     <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
@@ -78,4 +78,7 @@
     <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
   </MODULES>
   <JUCEOPTIONS/>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
 </JUCERPROJECT>

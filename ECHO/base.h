@@ -13,8 +13,6 @@
 
 #define AF_BUILD 1
 
-#include "juceHeader.h"
-
 typedef unsigned char byte;
 
-#endif
+#endif // _Ehw_h_

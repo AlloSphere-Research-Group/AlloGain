@@ -11,13 +11,14 @@
 #ifndef _Ehw_h_
 #define _Ehw_h_
 
-#include "base.h"
-#include "ehwlist.h"
+
 #include <IOKit/IOTypes.h>
 #include <IOKit/IOCFPlugin.h>
 #include <IOKit/firewire/IOFireWireLib.h>
 #include <IOKit/avc/IOFireWireAVCLib.h>
 #include <CoreAudio/CoreAudio.h>
+#include "base.h"
+#include "ehwlist.h"
 #include "CoreEFC.h"
 
 #ifndef DBG_PRINTF
